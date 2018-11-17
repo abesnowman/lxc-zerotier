@@ -1,0 +1,28 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          tun
+# Required-Start:    $network
+# Required-Stop:     $openvpn
+# Default-Start:     S 1 2
+# Default-Stop:      0 6
+# Short-Description: Make a tun device.
+# Description:       Create a tundev for ZeroTier, place in /etc/init.d/tun
+#                    chmod 755 /etc/init.d/tun and update-rc.d tun defaults
+### END INIT INFO
+
+case "$1" in
+    start)
+        mkdir /dev/net
+        mknod /dev/net/tun c 10 200
+        chmod 666 /dev/net/tun
+        ;;
+    stop)
+        rm /dev/net/tun
+        rmdir /dev/net
+        ;;
+    restart)
+        #do nothing!
+        ;;
+esac
+
+exit 0
