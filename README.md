@@ -7,4 +7,6 @@ Or just chmod +x setup.sh and execute it with sh ./setup.sh and it'll do it for 
 
 You may have to restart the zerotier-one service ('service zerotier-one restart', be warned, this may appear to hang for a minute.)
 
+'ip addr | grep "zt"' to see if the interface is up and has an assigned IP in your container.
+
 That's it.
