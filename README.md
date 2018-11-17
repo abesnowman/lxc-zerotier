@@ -5,4 +5,6 @@ Basically, the configuration requires a tun device, which is not created as part
 
 Or just chmod +x setup.sh and execute it with sh ./setup.sh and it'll do it for you.
 
+You may have to restart the zerotier-one service ('service zerotier-one restart', be warned, this may appear to hang for a minute.)
+
 That's it.
